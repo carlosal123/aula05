@@ -27,6 +27,23 @@
         
 
     </script>
+    <h1> Exercicio 02</h1>
+
+    <input type="number" name="numero1" id="numero1" class= "numero1" value="0"> 
+    <input type="number" name="numero2" id="numero2" class= "numero2" value="0">
+    <input type="submit" value="multiplicar" onclick="multiplicar()">
+    <div class="resultado" id="resultado"></div>
+    <script>
+        function multiplicar(){
+            let numero1 = document.getElementById('numero1');
+            let numero2 = document.getElementById('numero2');
+            let resultado = document.getElementById('resultado');
+            let valor1 = Number(numero1.value);
+            let valor2 = Number(numero2.value);
+            let multiplicacao = valor1*valor2;
+           resultado.innerHTML = 'o valor de multiplicacao entre ' + valor1 + ' é '+ valor2 + ' é igual a resultado '+ multiplicacao;
+        }
+    </script> 
     </div>
 </body>
 </html>
