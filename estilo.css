@@ -3,7 +3,7 @@
 body{
   text-align: center;
   width: 100%;
-  background-color: red !important;
+  background-color: rgb(87, 10, 10) !important;
 
 }
 
@@ -14,13 +14,16 @@ body{
     width: 650px;
     text-align: center;
     box-shadow: 0px 0px 4px #000;
-    margin: 0 auto;
-    padding: 25px;
+    margin: auto;
+    padding: 20px;
+    /* espaçamento de blocos  */
+    margin-top: 20px;        
+    margin-bottom: 20px;
 }
 
 
 .campo{
-    margin-bottom: 20px;
+    margin-bottom: auto;
 }
 .campo input {
     text-align: center;

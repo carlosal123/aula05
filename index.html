@@ -10,40 +10,68 @@
 </head>
 <body>
        
-        <div class="form">
-    <label>CPF</label>
-    <input type="text" id="cpf" maxlength="14">
-    <input type="submit" name= "enviar" onclick="enviar()">
-    <script>
-        let cpf = document.querySelector('#cpf');
-        cpf.addEventListener("keyup",()=> {
-            let value = cpf.value.replace(/[^0-9]/g,"").replace(/^([\d]{3})([\d]{3})?([\d]{3})?([\d]{2})?/,"$1.$2.$3-$4");
-            cpf.value = value;
-        });
+    <div class="form">
+        <label>CPF</label>
+        <input type="text" id="cpf" maxlength="14">
+        <input type="submit" name= "enviar" onclick="enviar()">
+        <script>
+            let cpf = document.querySelector('#cpf');
+            cpf.addEventListener("keyup",()=> {
+                let value = cpf.value.replace(/[^0-9]/g,"").replace(/^([\d]{3})([\d]{3})?([\d]{3})?([\d]{2})?/,"$1.$2.$3-$4");
+                cpf.value = value;
+            });
 
-            function enviar() {
-                alert('o seu cpf é:'+ cpf.value + '.');
+                function enviar() {
+                    alert('o seu cpf é:'+ cpf.value + '.');
+                }
+            
+
+        </script>
+    </div>
+    <div class="form">
+    
+        <h1> Exercicio 02</h1>
+
+        <input type="number" name="numero1" id="numero1" class= "numero1" value="0"> 
+        <input type="number" name="numero2" id="numero2" class= "numero2" value="0">
+        <input type="submit" value="multiplicar" onclick="multiplicar()">
+        <div class="resultado" id="resultado"></div>
+        <script>
+            function multiplicar(){
+                let numero1 = document.getElementById('numero1');
+                let numero2 = document.getElementById('numero2');
+                let resultado = document.getElementById('resultado');
+                let valor1 = Number(numero1.value);
+                let valor2 = Number(numero2.value);
+                let multiplicacao = valor1*valor2;
+            resultado.innerHTML = 'o valor de multiplicacao entre ' + valor1 + ' é '+ valor2 + ' é igual a resultado '+ multiplicacao;
+            }
+        </script> 
+    </div>
+    <div class="form">
+        <h1>Sistema de multas - Aula06</h1>
+        <p> Velocidade de carro</p>
+        <input type="number" name+velocidade id= "velocidade"><strong id= "quilometros"> KM/H</strong>
+        <input type="submit" value="Verificar" onclick="calcular()";>
+        <div id="vResultado"></div>
+        <script>
+            function calcular(){
+                let velocidade = document.getElementById('velocidade');
+                let vResultado = document.getElementById('vResultado');
+                let vel = Number(velocidade.value);
+                vResultado.innerHTML = `Sua velocidade atual e de <strong>${vel} KM/H </strong>`;
+                // vResultado.innerHTML = `sua velocidade atual é de <strong> '+ vel+'KM/H <strong>`;
+                
+        
+                if(vel> 50){
+                    vResultado.innerHTML += 'voce está <strong> MULTADO! <strong>';
+                
+                } else {
+                    vResultado.innerHTML += `parabens, voce nao foi multado`; 
+                }
             }
         
-
-    </script>
-    <h1> Exercicio 02</h1>
-
-    <input type="number" name="numero1" id="numero1" class= "numero1" value="0"> 
-    <input type="number" name="numero2" id="numero2" class= "numero2" value="0">
-    <input type="submit" value="multiplicar" onclick="multiplicar()">
-    <div class="resultado" id="resultado"></div>
-    <script>
-        function multiplicar(){
-            let numero1 = document.getElementById('numero1');
-            let numero2 = document.getElementById('numero2');
-            let resultado = document.getElementById('resultado');
-            let valor1 = Number(numero1.value);
-            let valor2 = Number(numero2.value);
-            let multiplicacao = valor1*valor2;
-           resultado.innerHTML = 'o valor de multiplicacao entre ' + valor1 + ' é '+ valor2 + ' é igual a resultado '+ multiplicacao;
-        }
-    </script> 
+        </script>
     </div>
 </body>
 </html>
